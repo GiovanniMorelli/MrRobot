@@ -85,3 +85,7 @@ LLFFFLFLFL
 
 * http://yourhost/robotPage
 
+### Example
+
+* ![Alt text](/public/images/test_screen/execution_test_1.png?raw=true "Test 1")
+
