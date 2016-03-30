@@ -1,0 +1,89 @@
+extends layout
+
+block content
+  div(layout='column' )
+    md-toolbar(data-current-skin="blue")
+      div(class="md-toolbar-tools" )
+        p Mr Robot
+  div(ng-controller="manageRobot as MRCtrl")
+    form(autocomplete="off" name="formRunRobot" class="smart-form client-form" ng-submit="MRCtrl.submit(formRunRobot.$valid,this)" novalidate)
+      div(layout="row" layout-align="center center" )
+        span( class="md-headline")
+          | Create Grid
+      div(layout="row" layout-align="center center" )
+        section
+          md-content(layout-padding)
+            md-input-container( )
+              label
+                |Grid X
+              input( md-maxlength="2" ng-pattern="onlyNumbers" required md-no-asterisk name="gridX" ng-model="gridX")
+              div(ng-messages="formRunRobot.gridX.$error" class="errors")
+                span( ng-message="pattern")
+                  |Must be a number
+                span( ng-message="required")
+                  | This field is required
+            md-input-container()
+              label
+                | Grid Y
+              input( md-maxlength="2" required md-no-asterisk ng-pattern="onlyNumbers" name="gridY" ng-model="gridY")
+              div(ng-messages="formRunRobot.gridY.$error" class="errors")
+                span( ng-message="pattern")
+                  | Must be a number
+                span( ng-message="required")
+                  | This field is required
+      div(layout="row" layout-align="center center" )
+        span( class="md-headline")
+          | Insert position and instructions
+      div(layout="row" layout-align="center center" )
+        section
+          md-content(layout-padding)
+            md-input-container( )
+              label
+                | Poition X
+              input( md-maxlength="2" required md-no-asterisk ng-pattern="onlyNumbers" name="gridXPosition" ng-model="gridXPosition")
+              div(ng-messages="formRunRobot.gridXPosition.$error" class="errors")
+                span( ng-message="pattern")
+                  | Must be a number
+                span( ng-message="required")
+                  | This field is required
+            md-input-container()
+              label
+                | Position Y
+              input( md-maxlength="2" required md-no-asterisk ng-pattern="onlyNumbers" name="gridYPosition" ng-model="gridYPosition")
+              div(ng-messages="formRunRobot.gridYPosition.$error" class="errors")
+                span( ng-message="pattern")
+                  | Must be a number
+                span( ng-message="required")
+                  | This field is required
+            md-input-container()
+              label
+                | Instructions
+              input( md-maxlength="100" required md-no-asterisk ng-pattern="onlyCoord" name="instructions" ng-model="instructions")
+              div(ng-messages="formRunRobot.instructions.$error" class="errors")
+                span( ng-message="pattern")
+                  | Accept only F - R - L
+                span( ng-message="required")
+                  | This field is required
+            md-input-container(class="md-block")
+              label
+                | Heading
+              md-select(placeholder="Assign Heading" ng-model="lastHeading" required  style="min-width: 200px;")
+                md-option( value="N")
+                  |North
+                md-option( value="E")
+                  |East
+                md-option( value="S")
+                  |South
+                md-option( value="W")
+                  |West
+              div(ng-messages="formRunRobot.lastHeading.$error" class="errors")
+                span( ng-message="required")
+                  | This field is required
+      div(layout="row" layout-align="center center" )
+        md-button(type="submit" class="md-raised md-primary")
+          |Run
+      div(layout="row" layout-align="center center" )
+        p(id="resultMrRobot")
+        p(id="resultLostMrRobot")
+  div(ng-view )
+
