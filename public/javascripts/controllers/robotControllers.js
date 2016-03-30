@@ -7,11 +7,11 @@ mrRobot.controller('manageRobot', function ($scope, $timeout,$log) {
 
         //dimension Grid
         if (isValid) {
-            console.log("Start==>"+$scope.gridXPosition+","+$scope.gridYPosition+$scope.lastHeading,$scope.checkPosition==false?"LOST":"");
             var iterator=0;
             $scope.compass = ['N','E','S','W'];
             //reset check position
             $scope.checkPosition=true;
+            console.log("Start==>"+$scope.gridXPosition+","+$scope.gridYPosition+$scope.lastHeading,$scope.checkPosition==false?"LOST":"");
             for(iterator=0;iterator<$scope.instructions.length;iterator++){
                 addMove($scope.instructions[iterator],$scope);
                 checkPosition($scope);
@@ -20,7 +20,7 @@ mrRobot.controller('manageRobot', function ($scope, $timeout,$log) {
                 }
             }
             //print last position
-            console.log($scope.gridXPosition+","+$scope.gridYPosition+$scope.lastHeading,$scope.checkPosition==false?"LOST":"");
+            console.log("End==>"+$scope.gridXPosition+","+$scope.gridYPosition+$scope.lastHeading,$scope.checkPosition==false?"LOST":"");
             $("#resultMrRobot").text($scope.gridXPosition+","+$scope.gridYPosition+$scope.lastHeading);
             if($scope.checkPosition==false){
                 $("#resultLostMrRobot").text("LOST");
