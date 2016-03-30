@@ -73,3 +73,15 @@ LLFFFLFLFL
 
 * Node.js
 
+### Languages
+
+* AngularJs 1.5
+* Angular Material
+* Node.js
+* Grunt
+* Jquery
+
+### Run Application
+
+* http://yourhost/robotPage
+
