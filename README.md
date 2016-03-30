@@ -64,9 +64,9 @@ LLFFFLFLFL
 
 1,1E
 
-3,3NLOST
+3,4NLOST
 
-2,3S
+3,4NLOST
 
 
 ### Prerequisites
