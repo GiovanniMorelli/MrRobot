@@ -80,6 +80,7 @@ LLFFFLFLFL
 * Node.js
 * Grunt
 * Jquery
+* Jade
 
 ### Run Application
 
